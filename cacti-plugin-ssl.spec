@@ -1,7 +1,7 @@
 %define		namesrc	ssl
 %include	/usr/lib/rpm/macros.perl
-Summary:	Plugin for Cacti -
-#Summary(pl.UTF-8):	Wtyczka do Cacti -
+Summary:	Plugin for Cacti - forcing SSL access
+Summary(pl.UTF-8):	Wtyczka do Cacti wymuszająca dostęp przez SSL
 Name:		cacti-plugin-ssl
 Version:	0.1
 Release:	0.1
@@ -18,16 +18,15 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		webcactipluginroot /usr/share/cacti/plugins/%{namesrc}
 
 %description
-Plugin for Cacti - This plugin forces your Cacti users to use SSL to
-access Cacti. No page or graph will be viewable through regular http.
-Make sure you are running SSL Support on your web server before
-enabling.
+This Cacti plugin forces your Cacti users to use SSL to access Cacti.
+No page or graph will be viewable through regular HTTP. Make sure you
+are running SSL support on your web server before enabling.
 
 %description -l pl.UTF-8
-Wtyczka do Cacti - wymusza stosowanie SSL (szyfrowania) przy dostępie
-WWW do Cacti. Żadna strona ani wykres nie będzie dostępny po http
-(tylko po https). Upewnij się że twój serwer WWW obsługuje SSL przed
-zainstalowaniem tej wtyczki.
+Wtyczka do Cacti wymuszająca stosowanie SSL (szyfrowania) przy
+dostępie WWW do Cacti. Żadna strona ani wykres nie będzie dostępny po
+nieszyfrowanym HTTP. Przed zainstalowaniem wtyczki należy upewnić się,
+że serwer WWW obsługuje SSL.
 
 %prep
 %setup -q -c
