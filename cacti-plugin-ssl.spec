@@ -1,4 +1,4 @@
-%define		namesrc	ssl
+%define		plugin	ssl
 %include	/usr/lib/rpm/macros.perl
 Summary:	Plugin for Cacti - forcing SSL access
 Summary(pl.UTF-8):	Wtyczka do Cacti wymuszająca dostęp przez SSL
@@ -7,7 +7,7 @@ Version:	0.1
 Release:	0.1
 License:	GPL v2
 Group:		Applications/WWW
-Source0:	http://mirror.cactiusers.org/downloads/plugins/%{namesrc}-%{version}.zip
+Source0:	http://mirror.cactiusers.org/downloads/plugins/%{plugin}-%{version}.zip
 # Source0-md5:	72eda21392828e9433a7b89674ddb468
 URL:		http://www.cactiusers.org/
 BuildRequires:	rpm-perlprov
@@ -15,7 +15,8 @@ Requires:	cacti
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		webcactipluginroot /usr/share/cacti/plugins/%{namesrc}
+%define		cactidir		/usr/share/cacti
+%define		plugindir		%{cactidir}/plugins/%{plugin}
 
 %description
 This Cacti plugin forces your Cacti users to use SSL to access Cacti.
@@ -33,12 +34,12 @@ nieszyfrowanym HTTP. Przed zainstalowaniem wtyczki należy upewnić się,
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{webcactipluginroot}
-cp -a * $RPM_BUILD_ROOT%{webcactipluginroot}
+install -d $RPM_BUILD_ROOT%{plugindir}
+cp -a . $RPM_BUILD_ROOT%{plugindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%{webcactipluginroot}
+%{plugindir}
