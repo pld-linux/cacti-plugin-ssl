@@ -11,6 +11,7 @@ Source0:	http://mirror.cactiusers.org/downloads/plugins/%{plugin}-%{version}.zip
 # Source0-md5:	72eda21392828e9433a7b89674ddb468
 URL:		http://www.cactiusers.org/
 BuildRequires:	rpm-perlprov
+BuildRequires:	unzip
 Requires:	cacti
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
