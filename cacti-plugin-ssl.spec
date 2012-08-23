@@ -5,7 +5,7 @@ Summary:	Plugin for Cacti - forcing SSL access
 Summary(pl.UTF-8):	Wtyczka do Cacti wymuszająca dostęp przez SSL
 Name:		cacti-plugin-%{plugin}
 Version:	0.1
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://mirror.cactiusers.org/downloads/plugins/%{plugin}-%{version}.tar.gz
@@ -13,7 +13,7 @@ Source0:	http://mirror.cactiusers.org/downloads/plugins/%{plugin}-%{version}.tar
 URL:		http://www.cactiusers.org/
 BuildRequires:	rpmbuild(macros) >= 1.554
 Requires:	cacti
-Requires:	php-common >= 4:%{php_min_version}
+Requires:	php(core) >= %{php_min_version}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
