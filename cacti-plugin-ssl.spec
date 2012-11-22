@@ -10,7 +10,7 @@ License:	GPL v2
 Group:		Applications/WWW
 Source0:	http://mirror.cactiusers.org/downloads/plugins/%{plugin}-%{version}.tar.gz
 # Source0-md5:	dd762734fe19d73c4285c23245932c28
-URL:		http://www.cactiusers.org/
+URL:		http://forums.cacti.net/viewtopic.php?f=14&t=24236
 BuildRequires:	rpmbuild(macros) >= 1.554
 Requires:	cacti
 Requires:	php(core) >= %{php_min_version}
